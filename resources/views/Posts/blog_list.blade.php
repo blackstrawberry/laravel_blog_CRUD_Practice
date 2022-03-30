@@ -28,6 +28,11 @@
 <!-- Header End -->
 
 <div style=" display: flex; align-items: center; height: 500px;">
-<div  style="margin: auto;"><h2>This is Posts Page.</h2></div>
+@foreach($postlist as $post)
+<div  style="margin: auto;">
+    <h2>{{ $post->title }}</h2>
+    <p style="text-align: center">{{ $post->body }}</p>
+</div>
+@endforeach
 </div>
 @endsection

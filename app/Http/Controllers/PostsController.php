@@ -15,7 +15,10 @@ class PostsController extends Controller
      */
     public function index()
     {
-        //
+        $posts = Posts::latest()->get();
+        return view('Posts.blog_list', [
+            'postlist' => $posts
+        ]);
     }
 
     /**

@@ -26,8 +26,11 @@ Route::get('/', function () {
     return view('Posts.index');
 });
 
-Route::get('/posts', function () {
-    return view('Posts.blog_list');
-});
+// Route::get('/posts', function () {
+//     return view('Posts.blog_list');
+// });
 
+
+Route::get('/posts', [PostsController::class, 'index']);
 Route::get('/posts/create', [PostsController::class, 'create']);
+Route::post('/posts', [PostsController::class, 'store']);
