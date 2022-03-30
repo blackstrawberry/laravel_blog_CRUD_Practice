@@ -14,7 +14,7 @@
                     <li><a href="/posts">Posts</a>
                         <ul class="sub-menu">
                             <li><a href="/posts">ViewPosts</a></li>
-                            <li><a href="/create">Create</a></li>
+                            <li><a href="/posts/create">Create</a></li>
                         </ul>
                     </li>
             </nav>

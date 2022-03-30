@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Posts;
+
 class PostsController extends Controller
 {
     /**
@@ -23,8 +25,7 @@ class PostsController extends Controller
      */
     public function create()
     {
-        //
-        dd("create 메소드로 왔다.");
+        return view('Posts.create');
     }
 
     /**
@@ -33,9 +34,15 @@ class PostsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
         //
+        $post = new Posts();
+        $post->title = request('title');
+        $post->body = request('body');
+        $post->save();
+
+        return redirect('/posts');
     }
 
     /**
