@@ -13,11 +13,11 @@
     <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap" rel="stylesheet">
 
     <!-- Css Styles -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.css' }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css' }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/nice-select.css' }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/slicknav.min.css' }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/style.css' }}" type="text/css">
 </head>
 
 <body>

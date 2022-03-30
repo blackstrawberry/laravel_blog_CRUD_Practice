@@ -31,3 +31,4 @@ Route::get('/posts', function () {
 });
 
 Route::get('/posts/create', [PostsController::class, 'create']);
+Route::post('/posts', [PostsController::class, 'store']);
