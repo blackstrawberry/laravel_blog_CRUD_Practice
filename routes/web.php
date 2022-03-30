@@ -18,8 +18,6 @@ use App\Http\Controllers\PostsController;
 //     return view('welcome');
 // });
 
-Auth::routes();
-
 // Route::get('/home', App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/', function () {
@@ -32,5 +30,11 @@ Route::get('/', function () {
 
 
 Route::get('/posts', [PostsController::class, 'index']);
-Route::get('/posts/create', [PostsController::class, 'create']);
 Route::post('/posts', [PostsController::class, 'store']);
+Route::get('/posts/create', [PostsController::class, 'create']);
+Route::get('/posts/{post}', [PostsController::class, 'show']);
+Route::get('/posts/{post}/edit', [PostsController::class, 'edit']);
+Route::put('/posts/{post}', [PostsController::class, 'update']);
+
+
+Auth::routes();

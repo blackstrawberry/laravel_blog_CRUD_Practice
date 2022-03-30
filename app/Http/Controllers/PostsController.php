@@ -54,9 +54,12 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Posts $post)
     {
-        //
+        // $post = Posts::findOrFail($id);
+        return view('Posts.show', [
+            'post' => $post
+        ]);
     }
 
     /**
@@ -65,9 +68,12 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Posts $post)
     {
-        //
+        // $post = Posts::findOrFail($id);
+        return view('Posts.edit', [
+            'post' => $post
+        ]);
     }
 
     /**
@@ -77,9 +83,13 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Posts $post)
     {
-        //
+        $post->title = request('title');
+        $post->body = request('body');
+        $post->save();
+
+        return redirect('/posts/' . $post->id);
     }
 
     /**

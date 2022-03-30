@@ -10,8 +10,8 @@
         <div class="nav-menu">
             <nav class="main-menu mobile-menu">
                 <ul>
-                    <li><a href="/">Home</a></li>
-                    <li class="active"><a href="/posts">Posts</a>
+                    <li class="active"><a href="/">Home</a></li>
+                    <li><a href="/posts">Posts</a>
                         <ul class="sub-menu">
                             <li><a href="/posts">ViewPosts</a></li>
                             <li><a href="/posts/create">Create</a></li>
@@ -26,16 +26,16 @@
     </div>
 </header>
 <!-- Header End -->
-
 <div style="text-align: center; margin-top:5%; margin-bottom:5%;">
-@foreach($postlist as $post)
 <div  style="margin: auto;">
-    <a href="/posts/{{ $post->id }}">
     <h2>{{ $post->title }}</h2>
+    <hr>
     <p style="text-align: center">{{ $post->body }}</p>
-    </a>
+    <!-- <button type="button"  onclick="location.href='/posts/{{ $post->id }}/edit'" >수정하기</button> -->
+    <form class="contact-form">
+        <button type="button"  onclick="location.href='/posts/{{ $post->id }}/edit'" >수정하기</button><button type="button" style="margin-left:10px;">삭제하기</button>
+    </form>
+    
 </div>
-@endforeach
-
 </div>
 @endsection
