@@ -26,16 +26,22 @@
     </div>
 </header>
 <!-- Header End -->
-<div style="text-align: center; margin-top:5%; margin-bottom:5%;">
+<div style="difplay: flex; text-align: center; margin: 10% 15% 10% 15%;  justify-content: center;">
 <div  style="margin: auto;">
     <h2>{{ $post->title }}</h2>
     <hr>
-    <p style="text-align: center">{{ $post->body }}</p>
+    <p style="height: 200px; display:flex; flex-direction: column; justify-content: center; align-item:center;">{{ $post->body }}</p>
     <!-- <button type="button"  onclick="location.href='/posts/{{ $post->id }}/edit'" >수정하기</button> -->
-    <form class="contact-form">
-        <button type="button"  onclick="location.href='/posts/{{ $post->id }}/edit'" >수정하기</button><button type="button" style="margin-left:10px;">삭제하기</button>
-    </form>
-    
+    <div style="display: flex; justify-content: center;">
+        <form class="contact-form">
+            <button type="button"  onclick="location.href='/posts/{{ $post->id }}/edit'" >수정하기</button>
+        </form>
+        <form action="/posts/{{ $post->id }}" class="contact-form" method="post">
+            @csrf
+            @method('DELETE')
+            <button type="submit" style="margin-left:10px;">삭제하기</button>
+        </form>
+    </div>
 </div>
 </div>
 @endsection
